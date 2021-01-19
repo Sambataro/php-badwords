@@ -35,8 +35,8 @@ la storia è questa e ve la conto ora.";
 
 $doggerelLength = strlen($doggerel); //utilizzo strlen per la lunghezza della stringa
 $censure = "***"; //creo una variabile contente la stringa che verrà utilizzata come replace della censura
-$badwords = $_GET["censure"]; // passo attraverso get la parola da censurare
-$doggerel = str_replace($badwords, $censure, $doggerel);
+$badwords = $_GET["badword"]; // passo attraverso get la parola da censurare
+$doggerelCensored = str_replace($badwords, $censure, $doggerel);
 /* utilizzo replace per cambiare
 valore e censurare  una porzione di stringa */
  ?>
@@ -54,7 +54,7 @@ valore e censurare  una porzione di stringa */
     <div class="container">
       <div class="text">
         <h1>La Mosca</h1> <span><h2>lunghezza filastrocca: <?php echo $doggerelLength ?> caratteri</h2> </span>
-        <p><?php echo $doggerel ?></p>
+        <p><?php echo $doggerelCensored ?></p>
       </div>
     </div>
   </body>
